@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tf-serving
+  namespace: tfmodels
+  labels:
+    id: tf-serving
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tf-serving
+  template:
+    metadata:
+      labels:
+        app: tf-serving
+    spec:
+      containers:
+        - name: tf-serving
+          image: tf-serve-i:0.6
+          imagePullPolicy: Never   # change for cloud deployment
+          args:
+            #- --model_config_file=/models/models.config
+            - --monitoring_config_file=/models/monitoring.config
+            #- --allow_version_labels_for_unavailable_models=true
+            #- --model_config_file_poll_wait_seconds=60
+            - --rest_api_port=8501
+          ports:
+            - containerPort: 8501
+              name: http
+              protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tf-serving
+  namespace: tfmodels
+  labels:
+    id: tf-serving
+spec:
+  type: LoadBalancer
+  selector:
+    app: tf-serving
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8501
+      targetPort: 8501

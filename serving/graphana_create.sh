@@ -1,0 +1,1 @@
+helm install --namespace monitoring grafana-chart bitnami/grafana
