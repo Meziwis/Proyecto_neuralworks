@@ -10,6 +10,7 @@ This repository contains the code and resources for analyzing flight data passin
   - [Project Structure](#project-structure)
   - [Setup and Installation](#setup-and-installation)
   - [Notebooks](#notebooks)
+  - [Detailed explanation](#detailed-explanation)
   
 
 
@@ -47,4 +48,8 @@ To set up the project locally, please follow the instructions in the [setup.md](
 ## Notebooks
 
 Detailed instructions on how to use the project components can be found in the [README.md](./notebooks/README.md) file. It provides an overview of each notebook, their purpose, and how to run them.
+
+## Detailed explanation
+
+For a detailed (spanish) explanation of the project, please refer to the [documentation](./documentation.md) file.
 
