@@ -10,7 +10,7 @@ This repository contains the code and resources for analyzing flight data passin
   - [Project Structure](#project-structure)
   - [Setup and Installation](#setup-and-installation)
   - [Notebooks](#notebooks)
-  - [Detailed explanation](#detailed-explanation)
+  - [Documentation](#documentation)
   
 
 
@@ -40,6 +40,8 @@ The repository is organized into the following directories:
 - **notebooks**: Contains Jupyter Notebooks for data analysis, preprocessing, and model training. It includes separate subdirectories for balanced and non-balanced notebooks.
 - **serving**: Includes files for model serving and deployment.
     - **models**: Stores serialized models or model-related files.
+- **docker**: Contains Dockerfiles for building Docker images.
+- **tests**: Includes unit tests for the project.
 
 ## Setup and Installation
 
@@ -49,7 +51,7 @@ To set up the project locally, please follow the instructions in the [setup.md](
 
 Detailed instructions on how to use the project components can be found in the [README.md](./notebooks/README.md) file. It provides an overview of each notebook, their purpose, and how to run them.
 
-## Detailed explanation
+## Documentation
 
 For a detailed (spanish) explanation of the project, please refer to the [documentation](./documentation.md) file.
 

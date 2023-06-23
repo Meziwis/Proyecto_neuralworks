@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Activate the conda environment
-source activate tf
+# Start the Docker container
+docker run -d --name my-container my-image
 
-# Run the Python script in a loop for 45 seconds
-for i in {1..45}
-do
-    python test_server.py
-    sleep 1
-done
+# Wait for the application to be ready
+sleep 5
 
-# Deactivate the conda environment
-conda deactivate
+# Run the tests against the containerized application
+docker exec my-container pytest
+
+# Cleanup: stop and remove the container
+docker stop my-container
+docker rm my-container
